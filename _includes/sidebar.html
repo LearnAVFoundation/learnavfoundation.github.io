@@ -4,41 +4,37 @@
         <a href="{{ site.baseurl }}/">
             <img src="{{ site.baseurl }}/assets/images/xixia.gif" class="img-circle" />
         </a>
-        <!--
-        <h3 class="title">
-        <a href="{{ site.BASE_PATH }}/">{{ site.title }}</a>
-        </h3>
-        -->
     </header>
     <div class="text-center">
         {{ site.description }}
     </div>
 </div>
 
-{% if site.data.tops.size > 0 %}
-<div class="sidebar well">
-    <h1>{{ trans.top_posts }}</h1>
-    <ul>
-        {% for top in site.data.tops %}
-            {% for post in site.posts %}
-                {% if post.url contains top.url %}
-                    <li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
-                {% endif %}
-            {% endfor %}
-        {% endfor %}
-    </ul>
-</div>
-{% endif %}
-
 <div class="sidebar well">
     <h1>{{ trans.recent_posts }}</h1>
     <ul>
-        {% for post in site.posts limit:5 %}
+        {% for post in site.posts limit:100 %}
           <li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
     </ul>
 </div>
 
 <div class="sidebar well">
-    {% include links-list.html %}
+    <ol>
+        <li>测试1</li>
+        <li>测试2</li>
+        <ol>
+            <li>测试3.1</li>
+            <li>测试3.2</li>
+        </ol>
+        <li>测试4</li>
+        <ol>
+            <li>测试5.1</li>
+            <li>测试5.2</li>
+            <ol>
+                <li>测试5.3.1</li>
+                <li>测试5.3.2</li>
+            </ol>
+        </ol>
+    </ol>
 </div>

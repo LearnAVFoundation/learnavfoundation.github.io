@@ -1,16 +1,32 @@
-{% include header.html %}
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="wrap">
-    <div class="container container-left">
-        <div class="row">
-            <div class="col-md-3 hidden-xs">
-                {% include sidebar.html %}
-            </div>
-            <div class="col-md-9">
-                {{ content }}
+<head>
+    <meta charset="UTF-8">
+    <title>{{ site.name }}</title>
+    <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/bootstrap.min.js"></script>
+    <link href="{{ site.baseurl }}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ site.baseurl }}/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="{{ site.baseurl }}/assets/css/layout.css" rel="stylesheet" type="text/css">
+{% include isso-comments.html %}
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container container-left">
+            <div class="row rowContent">
+                <div class="col-md-3 rightSliderBar">
+                    {% include sidebar.html %}
+                </div>
+                <div class="col-md-6">
+                    {{ content }}
+                </div>
+                <div class="col-md-3 leftSliderBar"></div>
             </div>
         </div>
     </div>
-
-    {% include footer.html %}
-</div>
+</body>
